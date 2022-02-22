@@ -10,13 +10,31 @@ import com.tns.framework.ShopFactory;
 public class ClientTest {
 
 	public static void main(String[] args) {
-		ShopFactory sf =new GSShopFactory();
-		PrimeAcc pa=new GSPrimeAcc(2022145, "Mk Younus ", 15000, true);
-		NormalAcc na=new GSNormalAcc(202425, "Rohit", 2000, 100);
-		pa.items(2);
-		pa.bookProduct(true, 100);
-		na.items(1);
-		na.bookProduct(false, 100);
+
+		// Step 1
+		GSShopFactory gsfactory = new GSShopFactory();
+		gsfactory.getNewPrimeAccount(191, "Yunus", 1000, true);
+		gsfactory.getNewNormalAccount(201, "Sam", 1000, 50);
+
+		// Step2
+		GSPrimeAcc gsprime = new GSPrimeAcc();
+		gsprime.getAccNm();
+		gsprime.getAccNo();
+		gsprime.getCharges();
+
+		// Step 4
+		gsprime.bookProduct(10000); // Step5
+		gsprime.toString();
+
+		// Step 3
+		GSNormalAcc gsnormal = new GSNormalAcc();
+		gsnormal.getAccNm();
+		gsnormal.getAccNo();
+		gsnormal.getCharges();
+		gsnormal.getDeliveryCharge();
+
+		gsnormal.bookProduct(10000);
+		gsnormal.toString();
 
 	}
 

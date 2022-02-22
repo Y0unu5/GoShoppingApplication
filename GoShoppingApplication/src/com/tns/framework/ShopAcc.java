@@ -1,35 +1,52 @@
 package com.tns.framework;
 
-public abstract class ShopAcc {
-	private int accNo;
-	private String accName;
-	protected float charges;
-
-	public ShopAcc(int accNo, String accName, float charges) {
-		super();
-		this.accNo = accNo;
-		this.accName = accName;
+public class ShopAcc {
+	protected static int accNo;
+	protected static String accNm;
+	private float charges;
+	
+	public static int getAccNo() {
+		return accNo;
+	}
+	public static void setAccNo(int accNo) {
+		ShopAcc.accNo = accNo;
+	}
+	public static String getAccNm() {
+		return accNm;
+	}
+	public static void setAccNm(String accNm) {
+		ShopAcc.accNm = accNm;
+	}
+	public float getCharges() {
+		return charges;
+	}
+	public void setCharges(float charges) {
 		this.charges = charges;
 	}
-
-	public void bookProduct(boolean isPrime, float deliveryCharge) {
-		deliveryCharge += charges;
-		if (isPrime == true) {
-			System.out.println(accNo + " " + accName + " " + " Your product charge is: " + charges);
-		} else {
-			System.out.println(accNo + " " + accName + " " + " Your product charge is: " + deliveryCharge);
-		}
-
+	public ShopAcc(float charges) {
+		
+		this.charges = charges;
 	}
-
-	public void items(int items) {
-           System.out.println("Number of items is: " +items);       
+	public ShopAcc(int accNo,String accNm, float charges)
+	{
+		this.accNo=accNo;
+		this.accNm=accNm;
+		this.charges=charges;
 	}
-
+	
+	public void bookProduct(float charges)
+	{
+		System.out.println("Product booked and charges are:"+ charges);
+	}
+	public void items(float charges)
+	{
+		System.out.println("Items are delivered with charges :"+ charges);
+	}
 	@Override
 	public String toString() {
-		return "ShopAcc [accNo=" + accNo + ", accName=" + accName + ", charges=" + charges + ", getClass()="
-				+ getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
+		return "ShopAcc [charges=" + charges + ", getCharges()=" + getCharges() + ", getClass()=" + getClass()
+				+ ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
 	}
-
+	
 }
+		

@@ -1,30 +1,32 @@
 package com.tns.framework;
 
-public abstract class PrimeAcc extends ShopAcc {
+public class PrimeAcc extends ShopAcc {
 
-	protected boolean isPrime;
+	public static boolean isPrime;
 
-	public PrimeAcc(int accNo, String accName, float charges, boolean isPrime) {
-		super(accNo, accName, charges);
+	public PrimeAcc(int accNo, String accNm, float charges, boolean isPrime) {
+		super(accNo, accNm, charges);
+		this.setPrime(isPrime);
+	}
+
+	@Override
+	public void bookProduct(float charges) {
+		System.out.println("Charges are : " + charges);
+	}
+
+	public boolean isPrime() {
+		return isPrime;
+	}
+
+	public void setPrime(boolean isPrime) {
 		this.isPrime = isPrime;
 	}
 
-	@Override
-	public void bookProduct(boolean isPrime, float deliveryCharge) {
-
-		super.bookProduct(isPrime, deliveryCharge);
-	}
-
-	@Override
-	public void items(int items) {
-
-		super.items(items);
-	}
-
-	@Override
 	public String toString() {
-		return "PrimeAcc [isPrime=" + isPrime + ", charges=" + charges + ", toString()=" + super.toString()
-				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + "]";
+		return "PrimeAcc [isPrime=" + isPrime() + ", accNo=" + getAccNo() + ", accNm=" + getAccNm() + ", charges="
+				+ getCharges() + ", toString()=" + super.toString() + ", getClass()=" + getClass() + ", hashCode()="
+				+ hashCode() + "]";
+
 	}
 
 }

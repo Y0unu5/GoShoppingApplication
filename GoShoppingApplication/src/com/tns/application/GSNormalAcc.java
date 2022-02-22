@@ -4,27 +4,23 @@ import com.tns.framework.NormalAcc;
 
 public class GSNormalAcc extends NormalAcc {
 
-	public GSNormalAcc(int accNo, String accName, float charges, float deliveryCharge) {
-		super(accNo, accName, charges, deliveryCharge);
-
+	public GSNormalAcc(int accNo, String accNm, float charges, float deliveryCharge) {
+		super(accNo, accNm, charges, deliveryCharge);
+		// TODO Auto-generated constructor stub
 	}
 
-	@Override
-	public void bookProduct(boolean isPrime, float deliveryCharge) {
-
-		super.bookProduct(isPrime, deliveryCharge);
+	public GSNormalAcc() {
+		super(accNo, accNm, deliveryCharge, deliveryCharge);
 	}
 
-	@Override
-	public void items(int items) {
-
-		super.items(items);
+	public void bookProduct(float charges) {
+		System.out.println(
+				"Dear Normal User, Your Charges are: " + charges + " with Delivery Charge is :" + deliveryCharge);
 	}
 
 	@Override
 	public String toString() {
-		return "GSNormalAcc [deliveryCharge=" + deliveryCharge + ", charges=" + charges + ", toString()="
-				+ super.toString() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + "]";
+		return "GSNormalAcc []";
 	}
 
 }

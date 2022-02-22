@@ -4,27 +4,23 @@ import com.tns.framework.PrimeAcc;
 
 public class GSPrimeAcc extends PrimeAcc {
 
-	public GSPrimeAcc(int accNo, String accName, float charges, boolean isPrime) {
-		super(accNo, accName, charges, isPrime);
+	private static final float charges = 0;
 
+	public float getCharges() {
+		return charges;
 	}
 
-	@Override
-	public void bookProduct(boolean isPrime, float deliveryCharge) {
-
-		super.bookProduct(isPrime, deliveryCharge);
+	public GSPrimeAcc() {
+		super(accNo, accNm, charges, isPrime);
 	}
 
-	@Override
-	public void items(int items) {
-
-		super.items(items);
+	public void bookProduct(float charges) {
+		System.out.println("Dear Prime User, Your Product Charges are:" + charges);
 	}
 
 	@Override
 	public String toString() {
-		return "GSPrimeAcc [isPrime=" + isPrime + ", charges=" + charges + ", toString()=" + super.toString()
-				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + "]";
+		return "GSPrimeAcc []";
 	}
 
 }
